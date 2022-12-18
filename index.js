@@ -18,7 +18,7 @@ mongoose.set("strictQuery", false);
 
 mongoose
   .connect(
-    "mongodb+srv://admin:MMAfighter03@cluster0.x1zbe89.mongodb.net/blog?retryWrites=true&w=majority"
+    "mongodb://mongo:8uZKYJ4zV3vGGQGRSWeu@containers-us-west-141.railway.app:6079"
   )
   .then(() => console.log("DB ok"))
   .catch((err) => console.log("err", err));
