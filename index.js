@@ -14,10 +14,10 @@ import { checkAuth, handelValidationsErrors } from "./utils/index.js";
 
 mongoose.set("strictQuery", false);
 
+// mongodb+srv://admin:MMAfighter03@cluster0.x1zbe89.mongodb.net/blog?retryWrites=true&w=majority
+
 mongoose
-  .connect(
-    "mongodb+srv://admin:MMAfighter03@cluster0.x1zbe89.mongodb.net/blog?retryWrites=true&w=majority"
-  )
+  .connect(process.env.MONGODBURI)
   .then(() => console.log("DB ok"))
   .catch((err) => console.log("err", err));
 
@@ -78,7 +78,9 @@ app.patch(
   PostController.update
 );
 
-app.listen(4444, (err) => {
+// 4444
+
+app.listen(process.env.PORT || 4444, (err) => {
   if (err) throw err;
 
   console.log("Server OK");
