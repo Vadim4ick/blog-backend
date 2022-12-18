@@ -24,6 +24,12 @@ mongoose
   .catch((err) => console.log("err", err));
 
 const app = express();
+
+app.get('/', (req, res) => {
+  res.send('Hello wolrd')
+})
+
+
 const storage = multer.diskStorage({
   destination: (_, __, cb) => {
     cb(null, "uploads");
